@@ -1,0 +1,4 @@
+TODO:
+    - fill in the description of the lesson
+    - check how to install dependencies
+    - test the code
