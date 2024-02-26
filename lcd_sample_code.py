@@ -3,14 +3,13 @@ import wiringpi
 import spidev
 from class_LCD import LCD, ActivateLCD, DeactivateLCD
 
-#try other pins !!!
 PINS = {
     'RST' : 10,
     'CS' : 13, # CE
     'DC' : 9, # D/C
     'DIN' : 11,
     'SCLK' : 14, # CLK
-    'LED' : 6, # LIGHT   
+    'LED' : 6, # LIGHT
 }
 
 wiringpi.wiringPiSetup()
@@ -24,13 +23,13 @@ try:
     lcd_1.clear()
     lcd_1.set_backlight(1)
     while True:
-        print ("input 0:",i)
-        ActivateLCD(PINS['CS']) #potentaily remove !!!
+        print (f'Counter:\n{i}')
+        ActivateLCD(PINS['CS'])
         lcd_1.clear()
         lcd_1.go_to_xy(0, 0)
         lcd_1.put_string(f'Counter:\n{i}')
         lcd_1.refresh()
-        DeactivateLCD(PINS['CS']) #potentaily remove !!!
+        DeactivateLCD(PINS['CS'])
         time.sleep(1)
         i += 1
 

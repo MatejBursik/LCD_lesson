@@ -5,6 +5,6 @@ TODO:
         - lcd uses SPI (what, why, how)
         - code explanation (code comments)
         - wiring explanation (image?)
-    - check how to install dependencies
-        - https://iot-essentials-tmk.netlify.app/docs/2-gpio.html#installing-and-using-wiringpi-python-for-gpio-on-the-orange-pi-3
+
+    - create another sample code (button plus lcd)
     - test the code
