@@ -12,27 +12,37 @@ PINS = {
     'LED' : 6, # LIGHT
 }
 
+buttonPin = 0
+
 wiringpi.wiringPiSetup()
 wiringpi.wiringPiSPISetupMode(1, 0, 400000, 0) # (channel, port, speed, mode)
+wiringpi.pinMode(buttonPin, 0) # set pin to mode 0 (input)
 wiringpi.pinMode(PINS['CS'] , 1) # set pin to mode 1 (output)
 ActivateLCD(PINS['CS'])
 lcd_1 = LCD(PINS)
 
-i=90
+pressed = False
 try:
     lcd_1.clear()
     lcd_1.set_backlight(1)
     
     while True:
-        print (f'Counter:\n{i}')
+        if wiringpi.digitalRead(buttonPin) == 0:
+            pressed = True
+            print(pressed)
+            
         ActivateLCD(PINS['CS'])
         lcd_1.clear()
         lcd_1.go_to_xy(0, 0)
-        lcd_1.put_string(f'Counter:\n{i}')
+        lcd_1.put_string(f'Pressed:\n{pressed}')
         lcd_1.refresh()
         DeactivateLCD(PINS['CS'])
-        time.sleep(1)
-        i += 1
+
+        if wiringpi.digitalRead(buttonPin) == 1:
+            pressed = False
+            print(pressed)
+
+        time.sleep(0.1) # anti bouncing
 
 except KeyboardInterrupt:
     lcd_1.clear()
