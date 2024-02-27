@@ -1,15 +1,15 @@
 Enter command prompt and clone this repo:
 
-git clone https://github.com/orangepi-xunlong/wiringOP
+` git clone https://github.com/orangepi-xunlong/wiringOP `
 
 Navigate into the WiringOP directory:
 
-cd wiringOP
+` cd wiringOP `
 
 Clean any previous build artifacts:
 
-sudo ./build clean
+` sudo ./build clean `
 
 Build and install WiringOP:
 
-sudo ./build
+` sudo ./build `

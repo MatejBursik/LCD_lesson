@@ -25,16 +25,19 @@ try:
     
     while True:
         print (f'Counter:\n{i}')
+        # LCD is activated and deactivated because of SPI
+        # this enabbles other SPI components to communicate with the master
         ActivateLCD(PINS['CS'])
-        lcd_1.clear()
-        lcd_1.go_to_xy(0, 0)
-        lcd_1.put_string(f'Counter:\n{i}')
-        lcd_1.refresh()
+        lcd_1.clear() # clear buffer
+        lcd_1.go_to_xy(0, 0) # starting position
+        lcd_1.put_string(f'Counter:\n{i}') # print to buffer
+        lcd_1.refresh() # update the LCD with the buffer
         DeactivateLCD(PINS['CS'])
         time.sleep(1)
         i += 1
 
 except KeyboardInterrupt:
+    # deactivaten the LCD after code ended
     lcd_1.clear()
     lcd_1.refresh()
     lcd_1.set_backlight(0)

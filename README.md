@@ -11,7 +11,7 @@ This repository is the starting stone to using Python, Orange Pi 3 LTS, LCD Noki
 ## Dependencies
 
 These libraries do not come with python out of the box
-- wiringpi (follow install_wiring_pi.txt)
+- wiringpi (follow [instruction](/install_wiring_pi.txt))
 - spidev (`pip install spidev`)
 
 ## Background
@@ -59,6 +59,22 @@ Pin layout corelation between Orange Pi pins (Hardware) labeled with H and their
 | 7 | LIGHT | Backlight Control |
 | 8 | GND | Ground |
 
+## Demo 1 (only LCD)
+
+This Demo focuses only on the LCD. Follow this [code](/lcd_sample_code.py) to display a counter which increases every second.
+
+#### Wiring
+
+![wiring for demo 1](/assets/)
+
+## Demo 2 (LCD + button)
+
+This Demo focuses using the LCD in conjunction with other components like a button. Follow this [code](/lcd_sample_code_button.py) to display whether the button is pressed or not.
+
+#### Wiring
+
+![wiring for demo 2](/assets/)
+
 ## Common problems
 
 Check your wiring.
@@ -67,3 +83,5 @@ Are the wires plugged in properly.
 
 Check the brightness of the LCD.
 You might need it to be brighter.
+
+Do you have downloaded the necessary dependencies.
