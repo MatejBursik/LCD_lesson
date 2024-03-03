@@ -2,14 +2,17 @@ import time
 import wiringpi
 import spidev
 
+# Call this before you do anything with the LCD.
 def ActivateLCD(pin):
     wiringpi.digitalWrite(pin, 0) # actived LCD using CS / CE
     time.sleep(0.000005)
 
+# Call this when you are done using the LCD for the moment.
 def DeactivateLCD(pin):
     wiringpi.digitalWrite(pin, 1) # deactived LCD using CS / CE
     time.sleep(0.000005)
 
+# This is the Orange Pi logo converted into a format that the LCD understands
 logo = [
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF8, 0xF8, 0xFC, 0xAE, 0x0E, 0x0E, 0x06, 0x0E, 0x06, 
@@ -171,6 +174,8 @@ def bit_reverse(value, width=8):
 
     return result
 
+
+# FIXME: should be in the LCD class?
 spi = spidev.SpiDev()
 
 class LCD:
@@ -212,19 +217,26 @@ class LCD:
             wiringpi.pinMode(self.LED, 1)
             wiringpi.digitalWrite(self.LED, OFF)
 
+    # Refresh the contents of the LCD. If you call a function that
+    # affects the contents of the LCD (like put_char, put_string,
+    # etc.), you must call this function in order to see the change on
+    # the LCD screen.
     def refresh(self):
         self.gotoxy_spi(0,0)
         time.sleep(0.1)
 
         wiringpi.digitalWrite(self.DC, ON)
         for byte in self.__buffer:
+            # FIXME: use writebyte instead?
             spi.writebytes([byte])
 
+    # Enter a newline on the LCD buffer
     def new_line(self, font = None):
         font = font or self.__font_current
         self.__cursor_x = 0
         self.__cursor_y += font['HEIGHT'] + 1
 
+    # Set a single pixel on the LCD screen.
     def set_pixel(self, x, y, color = BLACK, toggle = False):
         if x >= LCD_WIDTH or y >= LCD_HEIGHT:
             print('WRONG COORDINATES, x = {}, y = {}'.format(x, y))
@@ -241,6 +253,7 @@ class LCD:
         else:
             self.__buffer[x + (y // 8) * LCD_WIDTH]  &=  ~_BV(y % 8)
 
+    # Return the color of a pixel on the LCD
     def get_pixel(self, x, y):
         if x > LCD_WIDTH or y > LCD_HEIGHT:
             return 0
@@ -250,13 +263,17 @@ class LCD:
 
         return (self.__buffer[x + (y // 8) * LCD_WIDTH] >> (y % 8)) & 0x1
 
+    # Set a different font than the default (5x7font)
     def set_font(self, font):
         self.__font_current = font
 
+    # Move the cursor to a new position
     def go_to_xy(self, x, y):
         self.__cursor_x = x
         self.__cursor_y = y
 
+
+    # Puts a character and then moves the cursor
     def put_char(self, char, x = None, y = None, font = None):
         self.__cursor_x = x or self.__cursor_x
         self.__cursor_y  = y or self.__cursor_y
@@ -288,6 +305,7 @@ class LCD:
         except KeyError:
             pass # Ignore undefined characters.
 
+    # Puts a string on the LCD screen
     def put_string(self, string, x = None, y = None, font = None, is_center = False):
         font = font or self.__font_current
         x = x or self.__cursor_x
@@ -334,6 +352,8 @@ class LCD:
                 err += dx
                 y1 += sy
                 
+    # Draw a rectangle on the LCD without fill (it will not fill in
+    # the area of the rectangle)
     def draw_rect(self, x1, y1, x2, y2, color = BLACK):
         self.draw_horizontal_line(x1, x2, y1, color) # upper edge
         self.draw_horizontal_line(x1, x2, y2, color) # lower edge
@@ -441,6 +461,7 @@ class LCD:
                 self.set_pixel(x0+y, j, color)
                 self.set_pixel(x0-y, j, color)
 
+    # Wipe the LCD screen
     def clear(self):
         self.go_to_xy(0,0)
         self.__buffer = [0x00] * (ROWS * COLUMNS * PIXELS_PER_ROW)
@@ -459,6 +480,7 @@ class LCD:
         for y in range(y1, y2 + 1):
             self.set_pixel(x, y)
 
+    # Set the backlight of the LCD
     def set_backlight(self, value):
         wiringpi.digitalWrite(self.LED, value)
 
