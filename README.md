@@ -105,7 +105,7 @@ This Demo focuses using the LCD in conjunction with other components like a butt
 | 25 | -> | GND out of the button |
 | 26 | -> | Orange PI input |
 
-![wiring for demo 2](/assets/demo_1.png)
+![wiring for demo 2](/assets/demo_2.png)
 
 ## Common problems
 
