@@ -1,12 +1,12 @@
-TODO:
-    - fill in the description of the lesson
-        - describe the topic
-        - We are using Orange 3 LTS, LCD Nokia 5110 and Jumper wires.
-        - lcd uses SPI (what, why, how)
-        - code explanation (code comments)
-        - wiring explanation (image?)
-            - only lcd
-            - lcd + button
+- fill in the description of the lesson
+    - describe the topic
+    - We are using Orange 3 LTS, LCD Nokia 5110 and Jumper wires.
+    - lcd uses SPI (what, why, how)
+    - code explanation (code comments)
+    - wiring explanation (demo)
+        - only lcd
+        - lcd + button
 
-    - create another sample code (button plus lcd)
-    - test the code
+TODO:
+    - write an explanation on what a LCD is and how it works
+    - write more about the demo 1 and demo 2

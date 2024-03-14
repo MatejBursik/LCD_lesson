@@ -16,7 +16,9 @@ These libraries do not come with python out of the box
 
 ## Background
 
-#### SPI (Serial Peripheral Interface)
+### LCD (What is it)
+
+### SPI (Serial Peripheral Interface)
 
 SPI (Serial Peripheral Interface) is a synchronous serial communication protocol used for communicating between microcontrollers, sensors, memory devices, and other peripherals in embedded systems. It typically involves a master-slave configuration, where one device (the master) controls the communication and initiates data transfers with one or more peripheral devices (the slaves). In our case, the LCD Nokia 5110 uses SPI to communicate with Orange Pi 3 LTS where Orange Pi 3 LTS serves as the master and the LCD Nokia 5110 as the slave.
 
@@ -27,7 +29,7 @@ Devices that communicate via SPI need these connections:
   master.
 - SS/CS (Slave Select/Chip Select): This line is used by the master to select a specific slave device with which it wants to communicate. Typically, each slave device has its own SS/CS line.
 
-#### Orange Pi pins
+### Orange Pi pins
 
 Pin layout corelation between Orange Pi pins (Hardware) labeled with H and their functionality in Python code (wiringpi) labeled with W.
 
@@ -47,7 +49,7 @@ Pin layout corelation between Orange Pi pins (Hardware) labeled with H and their
 | 23 | w14 |   | w15 | 24 |
 | 25 | GND |   | w16 | 26 |
 
-#### LCD Nokia 5110 pins
+### LCD Nokia 5110 pins
 
 | Number | Lable | Function |
 |---|---|---|
@@ -66,15 +68,44 @@ This Demo focuses only on the LCD. Follow this [code](/lcd_sample_code.py) to di
 
 #### Wiring
 
-![wiring for demo 1](/assets/)
+| Orange PI |  | LCD |
+|---|---|---|
+| 8 | -> | 1 |
+| 10 | -> | 2 |
+| 12 | -> | 3 |
+| 16 | -> | 4 |
+| 18 | -> | 5 |
+| 1 | -> | 6 |
+| 22 | -> | 7 |
+| 20 | -> | 8 |
+
+![wiring for demo 1](/assets/demo_1.png)
 
 ## Demo 2 (LCD + button)
 
 This Demo focuses using the LCD in conjunction with other components like a button. Follow this [code](/lcd_sample_code_button.py) to display whether the button is pressed or not.
+1k pullup resistor switch.
 
 #### Wiring
 
-![wiring for demo 2](/assets/)
+| Orange PI |  | LCD |
+|---|---|---|
+| 8 | -> | 1 |
+| 10 | -> | 2 |
+| 12 | -> | 3 |
+| 16 | -> | 4 |
+| 18 | -> | 5 |
+| 1 | -> | 6 |
+| 22 | -> | 7 |
+| 20 | -> | 8 |
+
+| Orange PI |  | Button |
+|---|---|---|
+| 17 | -> | 3v3 to resistor |
+| 25 | -> | GND out of the button |
+| 26 | -> | Orange PI input |
+
+![wiring for demo 2](/assets/demo_1.png)
 
 ## Common problems
 

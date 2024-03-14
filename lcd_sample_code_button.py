@@ -4,15 +4,15 @@ import spidev
 from class_LCD import LCD, ActivateLCD, DeactivateLCD
 
 PINS = {
-    'RST' : 10,
-    'CS' : 13, # CE
-    'DC' : 9, # D/C
-    'DIN' : 11,
-    'SCLK' : 14, # CLK
-    'LED' : 6, # LIGHT
+    'RST' : 3,
+    'CS' : 4, # CE
+    'DC' : 6, # D/C
+    'DIN' : 9,
+    'SCLK' : 10, # CLK
+    'LED' : 13, # LIGHT
 }
 
-buttonPin = 0
+buttonPin = 16
 
 wiringpi.wiringPiSetup()
 wiringpi.wiringPiSPISetupMode(1, 0, 400000, 0) # (channel, port, speed, mode)
