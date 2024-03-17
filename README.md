@@ -64,7 +64,7 @@ Pin layout corelation between Orange Pi pins (Hardware) labeled with H and their
 
 ## Demo 1 (only LCD)
 
-This Demo focuses only on the LCD. Follow this [code](/lcd_sample_code.py) to display a counter which increases every second.
+This Demo focuses only on the LCD. Follow this [code](/demo_1.py) to display a counter which increases every second.
 
 #### Wiring
 
@@ -83,7 +83,7 @@ This Demo focuses only on the LCD. Follow this [code](/lcd_sample_code.py) to di
 
 ## Demo 2 (LCD + button)
 
-This Demo focuses using the LCD in conjunction with other components like a button. Follow this [code](/lcd_sample_code_button.py) to display whether the button is pressed or not.
+This Demo focuses using the LCD in conjunction with other components like a button. Follow this [code](/demo_2.py) to display whether the button is pressed or not.
 1k pullup resistor switch.
 
 #### Wiring
