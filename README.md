@@ -7,16 +7,20 @@ This repository is the starting stone to using Python, Orange Pi 3 LTS, LCD Noki
 - [Orange 3 LTS](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/orange-pi-3-LTS.html)
 - [LCD Nokia 5110](https://components101.com/displays/nokia-5110-lcd)
 - [Jumper Wires](https://en.wikipedia.org/wiki/Jump_wire)
+- [1k resistor](https://electronicsreference.com/1k_resistor_color_code/)
+- [Button](https://www.sparkfun.com/products/97)
 
 ## Dependencies
 
 These libraries do not come with python out of the box
-- wiringpi (follow [instruction](/install_wiring_pi.txt))
-- spidev (`pip install spidev`)
+- wiringpi (follow [instruction](/install_wiringpi.txt))
+- spidev (follow [instruction](/install_spidev.txt))
 
 ## Background
 
 ### LCD (What is it)
+
+???
 
 ### SPI (Serial Peripheral Interface)
 
@@ -113,4 +117,4 @@ Check your wiring. Are the wires connected to the correct pins? Are the wires pl
 
 Check the brightness of the LCD.  You might need it to be brighter.
 
-Have you downloaded all necessary dependencies?
+Have you downloaded all necessary dependencies? (spidev, wiringpi)​

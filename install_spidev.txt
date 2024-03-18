@@ -1,0 +1,10 @@
+Install spidev python library
+` pip install spidev `
+
+Edit orangepiEnv.txt​ file
+` sudo nano /boot/orangepiEnv.txt​ `
+
+Add a line to that file
+` overlay=spi-spidev `
+
+Reboot Orange Pi
