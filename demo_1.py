@@ -4,12 +4,12 @@ import spidev
 from class_LCD import LCD, ActivateLCD, DeactivateLCD
 
 PINS = {
-    'RST' : 3,
-    'CS' : 4, # CE
-    'DC' : 6, # D/C
-    'DIN' : 9,
-    'SCLK' : 10, # CLK
-    'LED' : 13, # LIGHT
+    'RST' : 10,
+    'CS' : 13, # CE
+    'DC' : 9, # D/C
+    'DIN' : 11,
+    'SCLK' : 14, # CLK
+    'LED' : 6, # LIGHT
 }
 
 wiringpi.wiringPiSetup()
