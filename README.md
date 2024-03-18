@@ -25,17 +25,17 @@ They offer a high readability and some people even prefer them due to the more n
 
 An LCD consists out of several components:
 
-  - **Backlight**: The backlight emits light, without the backlight the LCD would appear dark or black since the crystals themselves do not emit light.
-  - **Polarizer Plates**: The LCD has 2 polarizer plates, a horizontal plate which only lets through horizontally polarized light. And a vertical plate which only lets through vertically polarized light.
-  - **Glass panels**: The glass panels surround the liquid crystal and electrodes, this helps with structural integrity and flatness of the LCD.
-  - **Transparant Electrodes**: The electrodes are used to polarize the liquid crystal. They are accompanied by a transistor and are on one side of the glass panels.
-  By default the liquid crystal has random polarization. By creating electric fields, using the transistor and electrodes, the orientation of the liquid crystal will change. 
-  - **Liquid Crystal**: Liquid crystals can adapt the passage of light. If they are aligned properly they can either block or let through light. They can even change the brightness
-  of the light that is let through. By generating an electric field over certain areas, an image can be created.
-  - **Colour Filter**: The colour filter exists out of 3 subpixels. Red, green and blue, these subpixels combine to create the colours you see on the display.
-  - **Display**: The display will show the resulting image of the light manipulation that is done by the LCD.
+- **Backlight**: The backlight emits light, without the backlight the LCD would appear dark or black since the crystals themselves do not emit light.
+- **Polarizer Plates**: The LCD has 2 polarizer plates, a horizontal plate which only lets through horizontally polarized light. And a vertical plate which only lets through vertically polarized light.
+- **Glass panels**: The glass panels surround the liquid crystal and electrodes, this helps with structural integrity and flatness of the LCD.
+- **Transparant Electrodes**: The electrodes are used to polarize the liquid crystal. They are accompanied by a transistor and are on one side of the glass panels.
+By default the liquid crystal has random polarization. By creating electric fields, using the transistor and electrodes, the orientation of the liquid crystal will change. 
+- **Liquid Crystal**: Liquid crystals can adapt the passage of light. If they are aligned properly they can either block or let through light. They can even change the brightness
+of the light that is let through. By generating an electric field over certain areas, an image can be created.
+- **Colour Filter**: The colour filter exists out of 3 subpixels. Red, green and blue, these subpixels combine to create the colours you see on the display.
+- **Display**: The display will show the resulting image of the light manipulation that is done by the LCD.
 
-  All these parts are used for each and every pixel of the display.
+All these parts are used for each and every pixel of the display.
 
 ### SPI (Serial Peripheral Interface)
 
@@ -89,14 +89,14 @@ This Demo focuses only on the LCD. Follow this [code](/demo_1.py) to display a c
 
 | Orange PI |  | LCD |
 |---|---|---|
-| 8 | -> | 1 |
-| 10 | -> | 2 |
-| 12 | -> | 3 |
-| 16 | -> | 4 |
-| 18 | -> | 5 |
+| 18 | -> | 1 |
+| 22 | -> | 2 |
+| 16 | -> | 3 |
+| 19 | -> | 4 |
+| 23 | -> | 5 |
 | 1 | -> | 6 |
-| 22 | -> | 7 |
-| 20 | -> | 8 |
+| 12 | -> | 7 |
+| 9 | -> | 8 |
 
 ![wiring for demo 1](/assets/demo_1.png)
 
@@ -109,14 +109,14 @@ This Demo focuses using the LCD in conjunction with other components like a butt
 
 | Orange PI |  | LCD |
 |---|---|---|
-| 8 | -> | 1 |
-| 10 | -> | 2 |
-| 12 | -> | 3 |
-| 16 | -> | 4 |
-| 18 | -> | 5 |
+| 18 | -> | 1 |
+| 22 | -> | 2 |
+| 16 | -> | 3 |
+| 19 | -> | 4 |
+| 23 | -> | 5 |
 | 1 | -> | 6 |
-| 22 | -> | 7 |
-| 20 | -> | 8 |
+| 12 | -> | 7 |
+| 9 | -> | 8 |
 
 | Orange PI |  | Button |
 |---|---|---|

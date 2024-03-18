@@ -18,7 +18,7 @@ wiringpi.pinMode(PINS['CS'] , 1) # set pin to mode 1 (output)
 ActivateLCD(PINS['CS'])
 lcd_1 = LCD(PINS)
 
-i=90
+i = 0
 try:
     lcd_1.clear()
     lcd_1.set_backlight(1)

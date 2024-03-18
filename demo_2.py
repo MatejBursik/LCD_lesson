@@ -28,10 +28,10 @@ try:
     
     while True:
         # check if button is pressed
-        if wiringpi.digitalRead(buttonPin) == 0:
+        if wiringpi.digitalRead(buttonPin) == 1:
             pressed = False
             print(pressed)
-        elif wiringpi.digitalRead(buttonPin) == 1:
+        elif wiringpi.digitalRead(buttonPin) == 0:
             pressed = True
             print(pressed)
 

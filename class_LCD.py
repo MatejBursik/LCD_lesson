@@ -139,7 +139,7 @@ font5x7 = {
   '~' : {'byte' : [0x10, 0x08, 0x08, 0x10, 0x08]}
 }
 
-CONTRAST = 0x58 # brightness
+CONTRAST = 0x48 # brightness
 LCD_WIDTH = 84
 LCD_HEIGHT = 48
 ROWS = 6
