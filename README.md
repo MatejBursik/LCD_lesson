@@ -124,6 +124,10 @@ This Demo focuses using the LCD in conjunction with other components like a butt
 | 25 | -> | GND out of the button |
 | 26 | -> | Orange PI input |
 
+WARNING!!! 
+- The wiring diagram is not 100% correct. For the wiring in regards to the pins on the Orange Pi, mainly focus on the tables above.
+- The problem is that there are 30 pins on the image of Orange Pi but there should be 26. The 2 extra rows of pins in the image are row 13 and row 14 (pins 25-28).
+
 ![wiring for demo 2](/assets/demo_2.png)
 
 ## Common problems
