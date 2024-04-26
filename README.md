@@ -13,8 +13,8 @@ This repository is the starting stone to using Python, Orange Pi 3 LTS, LCD Noki
 ## Dependencies
 
 These libraries do not come with python out of the box
-- wiringpi (follow [instruction](/install_wiringpi.txt))
-- spidev (follow [instruction](/install_spidev.txt))
+- wiringpi (install with pip OR follow [instruction](/install_wiringpi.txt))
+- spidev (install with pip OR follow [instruction](/install_spidev.txt))
 
 ## Background
 
