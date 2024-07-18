@@ -134,6 +134,6 @@ WARNING!!!
 
 Check your wiring. Are the wires connected to the correct pins? Are the wires plugged in properly?
 
-Check the brightness of the LCD.  You might need it to be brighter.
+Check the brightness of the LCD.  You might need to adjust the value of it.
 
 Have you downloaded all necessary dependencies? (spidev, wiringpi)​
